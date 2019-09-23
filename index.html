@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-image: url("backg.jpg") ;
+        }
+        #box{
+            height: 870px;
+            background-image: url("box.jpg");
+            position: absolute;
+            z-index: -2;
+            width: 870px;
+            left: 500px;
+            top: 50px;
+            background-size: 100% 100%;
+            display: none;
+        }
+        #box div{
+            width: 200px;
+            height: 200px;
+            margin: 10px ;
+            text-align: center;
+            line-height: 200px;
+            font-size: 50px;
+            position: absolute;
+        }
+        #first{
+            top: 10px;
+            left: 10px;
+            z-index: -1;
+        }
+        #box div:nth-child(3){
+            top: 10px;
+            left: 220px;
+            z-index: -1;
+        }
+        #box div:nth-child(5){
+            top: 10px;
+            left: 430px;
+            z-index: -1;
+        }
+        #box div:nth-child(7){
+            top: 10px;
+            left: 640px;
+            z-index: -1;
+        }
+        #box div:nth-child(9){
+            top: 220px;
+            left: 10px;
+            z-index: -1;
+        }
+        #box div:nth-child(11){
+            top: 220px;
+            left: 220px;
+            z-index: -1;
+        }
+        #box div:nth-child(13){
+            top: 220px;
+            left: 430px;
+            z-index: -1;
+        }
+        #box div:nth-child(15){
+            top: 220px;
+            left: 640px;
+            z-index: -1;
+        }
+        #box div:nth-child(17){
+            top: 430px;
+            left: 10px;
+            z-index: -1;
+        }
+        #box div:nth-child(19){
+            top: 430px;
+            left: 220px;
+            z-index: -1;
+        }
+        #box div:nth-child(21){
+            top: 430px;
+            left: 430px;
+            z-index: -1;
+        }
+        #box div:nth-child(23){
+            top: 430px;
+            left: 640px;
+            z-index: -1;
+        }
+        #box div:nth-child(25){
+            top: 640px;
+            left: 10px;
+            z-index: -1;
+        }
+        #box div:nth-child(27){
+            top: 640px;
+            left: 220px;
+            z-index: -1;
+        }
+        #box div:nth-child(29){
+            top: 640px;
+            left: 430px;
+            z-index: -1;
+        }
+        #box div:nth-child(31){
+            top: 640px;
+            left: 640px;
+            z-index: -1;
+        }
+        #box div:nth-child(2){
+               top: 10px;
+               left: 10px;
+           }
+        #box div:nth-child(4){
+            top: 10px;
+            left: 220px;
+        }
+        #box div:nth-child(6){
+            top: 10px;
+            left: 430px;
+        }
+        #box div:nth-child(8){
+            top: 10px;
+            left: 640px;
+        }
+        #box div:nth-child(10){
+            top: 220px;
+            left: 10px;
+        }
+        #box div:nth-child(12){
+            top: 220px;
+            left: 220px;
+        }
+        #box div:nth-child(14){
+            top: 220px;
+            left: 430px;
+        }
+        #box div:nth-child(16){
+            top: 220px;
+            left: 640px;
+        }
+        #box div:nth-child(18){
+            top: 430px;
+            left: 10px;
+        }
+        #box div:nth-child(20){
+            top: 430px;
+            left: 220px;
+        }
+        #box div:nth-child(22){
+            top: 430px;
+            left: 430px;
+        }
+        #box div:nth-child(24){
+            top: 430px;
+            left: 640px;
+        }
+        #box div:nth-child(26){
+            top: 640px;
+            left: 10px;
+        }
+        #box div:nth-child(28){
+            top: 640px;
+            left: 220px;
+        }
+        #box div:nth-child(30){
+            top: 640px;
+            left: 430px;
+        }
+        #box div:nth-child(32){
+            top: 640px;
+            left: 640px;
+        }
+        .outer{
+            background-image: url("outer.jpg");
+            background-size: 100% 100%;
+        }
+        @keyframes in1{
+            0%{transform: rotateY(180deg)}
+            50%{transform: rotateY(270deg)}
+            100%{transform: rotateY(360deg)}
+        }
+        @keyframes out1{
+            0%{transform: rotateY(0deg)}
+            50%{transform: rotateY(90deg)}
+            100%{transform: rotateY(90deg)}
+        } @keyframes in2{
+              0%{transform: rotateY(0deg)}
+              50%{transform: rotateY(90deg)}
+              100%{transform: rotateY(0deg)}
+          }
+        @keyframes out2{
+            0%{transform: rotateY(90deg)}
+            50%{transform: rotateY(90deg)}
+            100%{transform: rotateY(0deg)}
+        }
+        @keyframes wash1 {
+            50%{
+                left:435px ; top:435px
+            }
+        }
+        #play{
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            top: 300px;
+            left: 1500px;
+            cursor: pointer;
+        }
+        #fresh{
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            top: 400px;
+            left: 1500px;
+            cursor: pointer;
+        }
+        #wash{
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            top: 500px;
+            left: 1500px;
+            cursor: pointer;
+        }
+        span{
+            text-align: center;
+            font-size: 25px;
+            color: white;
+        }
+        #box div img{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<span>步数:0</span>
+<span>分数:0</span>
+<div id="box">
+    <div class="inner" id="first"><img src="1.jpg" alt=""></div><div class="outer"></div>
+    <div class="inner"><img src="2.jpg" alt=""></div><div class="outer"></div>
+    <div class="inner"><img src="3.jpg" alt=""></div><div class="outer"></div>
+    <div class="inner"><img src="4.jpg" alt=""></div><div class="outer"></div>
+    <div class="inner"><img src="5.jpg" alt=""></div><div class="outer"></div>
+    <div class="inner"><img src="6.jpg" alt=""></div><div class="outer"></div>
+    <div class="inner"><img src="7.jpg" alt=""></div><div class="outer"></div>
+    <div class="inner"><img src="8.jpg" alt=""></div><div class="outer"></div>
+    <div class="inner"><img src="1.jpg" alt=""></div><div class="outer"></div>
+    <div class="inner"><img src="2.jpg" alt=""></div><div class="outer"></div>
+    <div class="inner"><img src="3.jpg" alt=""></div><div class="outer"></div>
+    <div class="inner"><img src="4.jpg" alt=""></div><div class="outer"></div>
+    <div class="inner"><img src="5.jpg" alt=""></div><div class="outer"></div>
+    <div class="inner"><img src="6.jpg" alt=""></div><div class="outer"></div>
+    <div class="inner"><img src="7.jpg" alt=""></div><div class="outer"></div>
+    <div class="inner"><img src="8.jpg" alt=""></div><div class="outer"></div>
+</div>
+<div id="box2">
+    <img src="play.jpg" alt="" id="play" onclick="play()">
+    <img src="shuaxin.jpg" alt="" id="fresh" onclick="refresh()">
+    <img src="xipai.jpg" alt="" id="wash">
+</div>
+<script>
+    var body =document.getElementsByTagName("body")[0];
+    var box = document.getElementById("box");
+    var divs = box.getElementsByTagName("div");
+    var inner = box.getElementsByClassName('inner');
+    var outer = box.getElementsByClassName('outer');
+    var arr = [];//存值
+    var arr1 = [];//存下标
+    var temp= 0 ;
+    var score = 0;
+    var arr2 = ['1.jpg','1.jpg','2.jpg','2.jpg','3.jpg','3.jpg','4.jpg','4.jpg','5.jpg','5.jpg','6.jpg','6.jpg','7.jpg','7.jpg','8.jpg','8.jpg'];//in中值
+    var arr3 = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];//下标
+    var arr4 = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+    var arr5 = ['1.jpg','1.jpg','2.jpg','2.jpg','3.jpg','3.jpg','4.jpg','4.jpg','5.jpg','5.jpg','6.jpg','6.jpg','7.jpg','7.jpg','8.jpg','8.jpg'];//in中值
+    var span=document.getElementsByTagName("span");
+    var imgs=box.getElementsByTagName("img");
+    console.log(imgs);
+    var wash1 =document.getElementById('wash');
+    function washarr3() {
+        for (var i = 0; i < arr4.length;i++){
+            var c = Math.floor(Math.random() * arr4.length);//0-(arr3.length-1
+            var ss = arr4[i];
+            arr4[i] = arr4[c];
+            arr4[c] = ss ;
+        } return arr4;
+    }
+    function washarr2() {
+        for (var i = 0; i < arr5.length;i++){
+            var c = Math.floor(Math.random() * arr5.length);//0-(arr2.length-1
+            var ss = arr5[i];
+            arr5[i] = arr5[c];
+            arr5[c] = ss ;
+        } return arr5;
+    }
+    wash1.onclick= function () {
+        washarr2();
+        washarr3();
+        console.log(arr4);
+        console.log(arr5);
+        for (var i = 0;i < inner.length;i++){
+            inner[i].style.animation = 'wash1 2s ease both';
+            outer[i].style.animation = 'wash1 2s ease both';
+            imgs[i].src = arr5[i];
+        }
+        setTimeout(function () {
+            for (var i = 0;i < inner.length;i++){
+                inner[i].style.animation = '';
+                outer[i].style.animation = '';
+            }
+        },2000);
+        console.log(imgs);
+    };
+    for (var i = 0;i<16;i++){
+        divs[2*i+1].onclick= (function (a) {
+            return function(){
+                arr1.unshift(a);
+                temp += 1;
+                divs[2*a].style.animation = "in1 1s both";
+                divs[2*a+1].style.animation = "out1 1s both";
+                arr.unshift((divs[2 * a].childNodes[0].src).slice(-5));
+                console.log(arr);
+                //console.log((divs[2 * a].childNodes[0].src).slice(-5));
+                if (arr[0]==arr[1]&&arr1[0]!=arr1[1]&&arr.length%2==0){
+                    setTimeout(function () {
+                        divs[2*arr1[1]].style.visibility="hidden";
+                        divs[2*arr1[1]+1].style.visibility="hidden";
+                        divs[2*arr1[0]].style.visibility="hidden";
+                        divs[2*arr1[0]+1].style.visibility="hidden";
+                    },1000);
+                        score += 1;
+                        if (score==8){
+                            box.style.display = "block";
+                            body.style.backgroundImage='url'+"(over.jpg)" ;
+                        }
+                       arr2.splice(arr2.indexOf(arr[0]),2);//删除配对的元素
+                       arr3.splice(arr3.indexOf(arr1[0]),1);//删除配对的下标值
+                       arr3.splice(arr3.indexOf(arr1[1]),1);//删除配对的下标值 /*剩下元素及下标*/
+                    //console.log(arr2);
+
+                    /* wash1.onclick= function () {
+                          washarr2();
+                          washarr3();
+                          for (var i = 0;i < arr3.length;i++){
+                              divs[arr3[i]*2].style.animation = 'wash1 2s ease';
+                              divs[arr3[i]*2+1].style.animation = 'wash1 2s ease';
+                              imgs[i].src=arr2[i];
+                          }
+                      }*/
+                }
+                getScore();
+               if (arr.length%2==0&&arr[0]!=arr[1]){
+                   setTimeout(function () {
+                       divs[2*arr1[1]].style.animation = "in2 1s both";
+                       divs[2*arr1[1]+1].style.animation = "out2 1s both";
+                       divs[2*arr1[0]].style.animation = "in2 1s both";
+                       divs[2*arr1[0]+1].style.animation = "out2 1s both";
+                   },3)
+               }
+             walking();
+            };
+        })(i);
+    }
+
+    function walking() {
+        span[0].innerHTML = "步数:"+temp;
+    }
+    function refresh() {
+        location.reload();
+    }
+    function getScore() {
+        span[1].innerHTML = "分数："+ score;
+    }
+    function play() {
+        box.style.display = "block";
+        body.style.backgroundImage='url'+"(backg.jpg)" ;
+     }
+  /*  function wash() {
+        for (var i = 0;i < 32;i++){
+            divs[i].style.animation = 'wash1 2s ease both '
+        }
+    }*/
+   /* wash1.onclick= function () {
+        washarr2();
+        washarr3();
+        for (var i = 0;i < arr3.length;i++){
+            divs[i].style.animation = 'wash1 2s ease  ';
+            imgs[i].src=arr2[i];
+        }
+    }*/
+</script>
+</body>
+</html>
